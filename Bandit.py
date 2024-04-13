@@ -21,6 +21,10 @@ class Bandit(ABC):
     @abstractmethod
     def __init__(self, p):
         self.p = p
+    
+    @abstractmethod
+    def __repr__(self):
+        pass
 
     @abstractmethod
     def pull(self):
