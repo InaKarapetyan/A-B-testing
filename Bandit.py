@@ -150,6 +150,9 @@ class EpsilonGreedy(Bandit):
         self.cumulative_average_rwrd = []
         self.epsilon = initial_epsilon
 
+    def __repr__(self):
+        return f'EpsilonGreedy(true_mean={self.p}, initial_epsilon={self.epsilon})'
+
     def pull(self):
         return np.random.randn() + self.p
 
@@ -199,6 +202,9 @@ class ThompsonSampling(Bandit):
         self.cumulative_regret = 0
         self.cumulative_regret_dict = {}
         self.cumulative_average_rwrd = []
+    
+    def __repr__(self):
+        return f'ThompsonSampling(true_mean={self.p})'
 
     def pull(self):
         return np.random.beta(self.alpha, self.beta)
